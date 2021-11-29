@@ -13,14 +13,19 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: $font-family-gilroy;
+  font-family: $font-family-circle;
+  display: grid;
+}
+
+body {
+  grid-template-rows: min-content auto min-content;
 }
 
 a {
   text-decoration: none;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
+// img {
+//   max-width: 100%;
+//   height: auto;
+// }

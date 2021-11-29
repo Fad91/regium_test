@@ -1,0 +1,48 @@
+.reasons-list {
+  margin: 0 0 60px 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 403px));
+  justify-content: center;
+  list-style: none;
+  align-items: baseline;
+
+  @include vp--767 {
+    display: flex;
+    margin: 0 0 5px 0;
+  }
+}
+
+.reasons-list__item {
+  text-align: center;
+}
+
+
+.reasons-list__item p {
+  font-size: 15px;
+  line-height: 22px;
+  color: #242424;
+  text-align: center;
+  margin: 0;
+  padding: 0 40px;
+
+  @include vp--767 {
+    font-size: 20px;
+  }
+}
+
+.reasons-list__item img {
+  margin-bottom: 27px;
+
+  @include vp--767 {
+    width: 236px;
+    height: 254px;
+    margin-bottom: 5px;
+  }
+}
+
+.reasons-list__item--hidden {
+  @include vp--767 {
+    display: none;
+  }
+}

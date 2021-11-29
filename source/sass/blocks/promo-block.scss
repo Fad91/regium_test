@@ -1,0 +1,69 @@
+.promo-block {
+  background-image: url("../img/desktop-promo-block-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include retina {
+    background-image: url("../img/desktop-promo-block-background@2x.jpg");
+  }
+}
+
+.promo-block__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 0 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include vp--767 {
+    width: 342px;
+    margin: 0 auto;
+    padding: 50px 0 45px 0;
+  }
+}
+
+.promo-block__content {
+  margin: 0 0 38px 0;
+  text-align: center;
+  color: #ffffff;
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 400;
+
+  @include vp--767 {
+    font-size: 18px;
+    margin: 0 0 5px 0;
+  }
+}
+
+.promo-block__content br {
+  @include vp--767 {
+    display: none;
+  }
+}
+
+.promo-block__button {
+  font-family: $font-family-circle;
+  background-image: linear-gradient(to right, #12bc82 0%, #bfdf2c 100%);
+  border: none;
+  border-radius: 10px;
+  width: 400px;
+  font-weight: 700;
+  font-size: 22px;
+  color: #ffffff;
+  padding: 13px 27px;
+  color: #ffffff;
+  font-weight: 400;
+
+  @include vp--767 {
+    width: 342px;
+    font-size: 20px;
+    padding: 15px 10px;
+  }
+}
+
+.promo-block__button strong {
+  text-transform: uppercase;
+  font-weight: 700;
+}

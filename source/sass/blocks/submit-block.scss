@@ -1,0 +1,115 @@
+.submit-block {
+  background-image: url("../img/desktop-submit-section.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include retina {
+    background-image: url("../img/desktop-submit-section.jpg");
+  }
+}
+
+.submit-block__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 148px 0 229px 0;
+  display: flex;
+  column-gap: 55px;
+
+  @include vp--767 {
+    width: 330px;
+    margin: 0 auto;
+    flex-direction: column;
+    padding: 42px 0 90px;
+  }
+}
+
+.submit-block__text {
+  font-size: 24px;
+  color: #ffffff;
+  margin: 0;
+  max-width: 600px;
+  padding: 0 98px 0 65px;
+  line-height: 1.2;
+  text-align: left;
+
+  @include vp--767 {
+    width: 330px;
+    padding: 0;
+    font-size: 18px;
+    margin: 0 0 53px;
+  }
+}
+
+.submit-block__text span {
+  @include vp--767 {
+    width: 100%;
+    display: block;
+  }
+}
+
+.submit-block__text br {
+  @include vp--767 {
+    display: none;
+  }
+}
+
+.submit-block__form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+
+  @include vp--767 {
+    width: 330px;
+  }
+}
+
+.submit-block__form input {
+  width: 370px;
+  margin-bottom: 26px;
+  font-size: 16px;
+  color: #909090;
+  padding: 21px 14px;
+  border: none;
+  border-radius: 10px;
+
+  @include vp--767 {
+    width: 330px;
+  }
+}
+
+.submit-block__form input.has-error {
+  box-shadow: 0 0 2px 2px red;
+}
+
+.submit-block__form input.has-success {
+  box-shadow: 0 0 2px 2px green;
+}
+
+.submit-block__form button {
+  width: 370px;
+  font-family: $font-family-circle;
+  background-image: linear-gradient(to right, #12bc82 0%, #bfdf2c 100%);
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 26px;
+  padding: 27px 10px;
+  font-weight: 800;
+  box-shadow: 0 2px 58px -10px #202020;
+
+  @include vp--767 {
+    width: 330px;
+  }
+}
+
+.submit-block__agreement {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.submit-block__agreement a {
+  color: #ffffff;
+  box-shadow: 0 -2px 0 -1px #ffffff inset;
+}

@@ -1,13 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Стартовый шаблон</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Tasty cookery</title>
+  <link rel="shortcut icon" href="favicon (2).ico" type="image/x-icon">
+  <link rel="preload" href="fonts/Circe-Bold.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="fonts/Circe-Regular.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="fonts/Circe-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
+
 <body>
-  <h1>Добро пожаловать в Лигу А.</h1>
+  <div class="visually-hidden">
+    <include src="build/img/sprite_auto.svg"></include>
+  </div>
+  <div class="intro">
+    <header class="header">
+      <div class="header__logo">
+        <a>
+          <svg width="186" height="49" viewbox="0 0 186 49">
+            <use href="#icon-logo"></use>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <section class="intro-section">
+      <h1 class="visually-hidden">Tasty cookery - рецепты на любой вкус</h1>
+      <h2 class="intro-section__title">Домашние<br>простые рецепты</h2>
+      <p class="intro-section__content">Собирайте рецепты в recipe box</p>
+      <form action="#submit-block">
+        <button type="submit" class="intro-section__button" aria-label="Перейти к странице регистрации">Присоединиться к сообществу</button>
+      </form>
+    </section>
+  </div>
+  <main>
+    <div class="features-block">
+      <ul class="features-block__list features">
+        <li class="features__item">
+          <p>Простые домашние рецепты</p>
+        </li>
+        <li class="features__item features__item--cook features__item--hidden">
+          <p>Статьи о готовке</p>
+        </li>
+        <li class="features__item features__item--book features__item--hidden">
+          <p>Бесплатная книга рецептов всем подписчикам</p>
+        </li>
+        <li class="features__item features__item--calendar features__item--hidden">
+          <p>Собирайте рецепты в recipe box</p>
+        </li>
+        <li class="features__item features__item--print features__item--hidden">
+          <p>Печать рецептов</p>
+        </li>
+      </ul>
+      <ul class="slider-crumbs">
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="10" height="10" viewBox="0 0 10 10" class="slider-crumbs__svg slider-crumbs__svg--active">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="10" height="10" viewBox="0 0 10 10" class="slider-crumbs__svg">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="10" height="10" viewBox="0 0 10 10" class="slider-crumbs__svg">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="10" height="10" viewBox="0 0 10 10" class="slider-crumbs__svg">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="10" height="10" viewBox="0 0 10 10" class="slider-crumbs__svg">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <section class="reasons-section">
+      <h2 class="reasons-section__title">Почему круто быть с нами:</h2>
+      <ul class="reasons-section__list reasons-list">
+        <li class="reasons-list__item">
+          <picture>
+            <source type="image/webp" srcset="img/desktop-first-reason.webp 1x, img/desktop-first-reason@2x.webp 2x">
+            <img src="img/desktop-first-reason.png" srcset="img/desktop-first-reason@2x.png 2x" alt="Рецепты в мобильном телефоне" width="340" height="341">
+          </picture>
+
+          <p>Получать лучшие рецепты<br>по разным категориям</p>
+        </li>
+        <li class="reasons-list__item reasons-list__item--hidden">
+          <picture>
+            <source type="image/webp" srcset="img/desktop-second-reason.webp 1x, img/desktop-second-reason@2x.webp 2x">
+            <img src="img/desktop-second-reason.png" srcset="img/desktop-second-reason@2x.png 2x" alt="Процесс готовки" width="403" height="341">
+          </picture>
+          <p>Готовить без лишних усилий и делать из каждого дня<br>не рутинный</p>
+        </li>
+        <li class="reasons-list__item reasons-list__item--hidden">
+          <picture>
+            <source type="image/webp" srcset="img/desktop-third-reason.webp 1x, img/desktop-third-reason@2x.webp 2x">
+            <img src="img/desktop-third-reason.png" srcset="img/desktop-third-reason@2x.png 2x" alt="Довольная семья" width="337" height="363">
+          </picture>
+          <p>Довольные<br>члены семьи</p>
+        </li>
+      </ul>
+      <ul class="slider-crumbs">
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="10" height="10" viewBox="0 0 10 10" class="slider-crumbs__svg slider-crumbs__svg--active">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="10" height="10" viewBox="0 0 10 10" class="slider-crumbs__svg">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="10" height="10" viewBox="0 0 10 10" class="slider-crumbs__svg">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </section>
+    <div class="promo-block">
+      <div class="promo-block__wrapper">
+        <p class="promo-block__content">Удобно получать на емейл уникальные проверенные рецепты, <br>которые дружная
+          команда Tastycookery попробовала
+          сама
+          и рекомендует
+        </p>
+        <form action="#submit-block">
+          <button type="submit" class="promo-block__button" aria-label="Перейти к странице регистрации">Стать членом семьи
+            Tastycookery <strong>Бесплатно</strong></button>
+        </form>
+      </div>
+    </div>
+    <section class="review-section">
+      <h2 class="review-section__title">Отзывы довольных пользователей</h2>
+      <ul class="review-section__list review-list">
+        <li class="review-list__item review-item">
+          <p class="review-item__content">После того, как стала участником проекта Tastycookery получает много простых
+            рецептов, о которых раньше не
+            задумывался, стал готовить некоторые, семья рада, стали больше разговаривать во время ужина и хвалить
+            кулинарные таланты Человека!
+          </p>
+          <div class="review-item__wrapper">
+            <picture>
+              <source type="image/webp" srcset="img/desktop-dayneris-review.webp 1x, img/desktop-dayneris-review@2x.webp 2x">
+              <img src="img/desktop-dayneris-review.png" srcset="img/desktop-dayneris-review@2x.png 2x" alt="Фото пользователя" width="96" height="96">
+            </picture>
+            <h3 class="review-item__name">Дейнерис<span class="review-item__age">56 лет</span></h3>
+          </div>
+        </li>
+        <li class="review-list__item review-item review-item--hidden">
+          <p class="review-item__content">Рад, что благодаря простым рецептам можно наслаждаться изысканными блюдами,
+            тратя на приготовление 20 мин в день
+          </p>
+          <div class="review-item__wrapper">
+            <picture>
+              <source type="image/webp" srcset="img/desktop-tyvin-review.webp 1x, img/desktop-tyvin-review@2x.webp 2x">
+              <img src="img/desktop-tyvin-review.png" srcset="img/desktop-tyvin-review@2x.png 2x" alt="Фото пользователя" width="96" height="96">
+            </picture>
+            <h3 class="review-item__name">Тайвин<span class="review-item__age">43 лет</span></h3>
+          </div>
+        </li>
+        <li class="review-list__item review-item review-item--hidden">
+          <p class="review-item__content">Довольна, что благодаря рецептам с TC могу на работу брать полезные обеды, что
+            полностью
+            отказалась от офисной неполезной еды и за 2 месяца похудела на 3 кг.И очень рекомендую всем использовать
+            рецепты с сайта
+          </p>
+          <div class="review-item__wrapper">
+            <picture>
+              <source type="image/webp" srcset="img/desktop-serseya-review.webp 1x, img/desktop-serseya-review@2x.webp 2x">
+              <img src="img/desktop-serseya-review.png" srcset="img/desktop-serseya-review@2x.png 2x" alt="Фото пользователя" width="96" height="96">
+            </picture>
+            <h3 class="review-item__name">Серсея<span class="review-item__age">56 лет</span></h3>
+          </div>
+        </li>
+      </ul>
+      <ul class="slider-crumbs">
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="10" height="10" viewBox="0 0 10 10" class="slider-crumbs__svg slider-crumbs__svg--active">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="10" height="10" viewBox="0 0 10 10" class="slider-crumbs__svg">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="slider-crumbs__item">
+          <button type="button">
+            <svg width="10" height="10" viewBox="0 0 10 10" class="slider-crumbs__svg">
+              <use href="#icon-slider" fill="none"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </section>
+    <div class="submit-block">
+      <div class="submit-block__wrapper">
+        <p class="submit-block__text"><span>Sign up to recieve daily manually selected recipes, delicious weekly
+            articles,</span><br>3-piece sets of slow cooker,
+          vegetarian, and lunch ideas, plus Quick&Easy recipes and Nutrition Value flashcards via email.
+        </p>
+        <div class="submit-block__form">
+          <form action="#" method="post">
+            <label for="email" class="visually-hidden">Зарегистрироваться</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email">
+            <button type="submit" aria-label="Зарегистрироваться">Sign up</button>
+            <p class="submit-block__agreement">By signing up i agree to the terms of the <a href="#">Privacy policy</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="footer__content"><span>&copy;</span>2014-2018 Tastycookery.com</p>
+  </footer>
+  <script src="js/vendor.js"></script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>

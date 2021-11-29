@@ -1,1 +1,13 @@
 // Файл миксинов
+
+@mixin vp--767 {
+  @media (max-width: ($vp--768 - 1)) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
