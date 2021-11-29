@@ -33,6 +33,7 @@
 
 .reasons-list__item img {
   margin-bottom: 27px;
+  object-fit: fill;
 
   @include vp--767 {
     width: 236px;

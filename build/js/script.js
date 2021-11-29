@@ -1,8 +1,12 @@
 // Переменные
 
 let featuresSlider = document.querySelector(".features");
-let slides = document.querySelectorAll(".features__item");
-let crumbs = document.querySelectorAll(".slider-crumbs__svg");
+let featuresSlides = document.querySelectorAll(".features__item");
+let reasonsSlides = document.querySelectorAll(".reasons-list__item")
+let featuresCrumbs = document.querySelectorAll(".features-block .slider-crumbs__svg");
+let reasonsCrumbs = document.querySelectorAll(".reasons-section .slider-crumbs__svg");
+let reviewSlides = document.querySelectorAll(".review-item")
+let reviewCrumbs = document.querySelectorAll(".review-section .slider-crumbs__svg");
 const mediaQuery = window.matchMedia("(max-width: 767px)");
 let introButton = document.querySelector(".intro-section__button");
 let promoButton = document.querySelector(".promo-block__button");
@@ -17,10 +21,22 @@ let x2 = null;
 // Надо добавить touchstart и touchmove
 
 if (mediaQuery.matches) {
-  for (let j = 0; j < slides.length; j++) {
-    slides[j].addEventListener("touchstart", touchStart, false);
-    slides[j].addEventListener("touchmove", touchMove, false);
-    slides[j].addEventListener("touchend", switchSlides, false);
+  for (let j = 0; j < featuresSlides.length; j++) {
+    featuresSlides[j].addEventListener("touchstart", touchStart, false);
+    featuresSlides[j].addEventListener("touchmove", touchMove, false);
+    featuresSlides[j].addEventListener("touchend", switchSlides, false);
+  }
+
+  for (let k = 0; k < reasonsSlides.length; k++) {
+    reasonsSlides[k].addEventListener("touchstart", touchStart, false);
+    reasonsSlides[k].addEventListener("touchmove", touchMove, false);
+    reasonsSlides[k].addEventListener("touchend", switchReasonsSlides, false);
+  }
+
+  for (let l = 0; l < reasonsSlides.length; l++) {
+    reviewSlides[l].addEventListener("touchstart", touchStart, false);
+    reviewSlides[l].addEventListener("touchmove", touchMove, false);
+    reviewSlides[l].addEventListener("touchend", switchReviewSlides, false);
   }
 
   function touchStart(evt) {
@@ -33,29 +49,59 @@ if (mediaQuery.matches) {
     return x2;
   }
 
+
+//   function switchSlides(slidesArr, crumbsArr, addClass) {
+//     let diff = x2 - x1;
+//     for (let i = 0; i < slidesArr.length; i++) {
+//       let slide = slidesArr[i];
+//       let crumb = crumbsArr[i];
+//       if (diff < 0) {
+//         if (evt.target === slide && i < slidesArr.length - 1) {
+//           let target = evt.target;
+//           target.classList.add(addClass);
+//           if (i < slidesArr.length - 1) {
+//             let nextSlide = slidesArr[i + 1];
+//             // console.log(nextSlide);
+//             nextSlide.classList.remove(addClass);
+//             // crumbs
+//             crumb.classList.remove("slider-crumbs__svg--active");
+//             let nextCrumb = crumbsArr[i + 1];
+//             nextCrumb.classList.add("slider-crumbs__svg--active");
+//           } else {
+//             return;
+//           }
+//         }
+//       } else {
+//         // let prevSlide = slidesArr[i - 1];
+//     }
+//   }
+//   }
+//   switchSlides(featuresSlides, featuresCrumbs, "features-item__hidden")
+// }
+// FEATURES BLOCK
   function switchSlides(evt) {
     let diff = x2 - x1;
-    for (let i = 0; i < slides.length; i++) {
-      let slide = slides[i];
-      let crumb = crumbs[i];
+    for (let i = 0; i < featuresSlides.length; i++) {
+      let slide = featuresSlides[i];
+      let crumb = featuresCrumbs[i];
       if (diff < 0) {
-        if (evt.target === slide && i < slides.length - 1) {
+        if (evt.target === slide && i < featuresSlides.length - 1) {
           let target = evt.target;
           target.classList.add("features__item--hidden");
-          if (i < slides.length - 1) {
-            let nextSlide = slides[i + 1];
+          if (i < featuresSlides.length - 1) {
+            let nextSlide = featuresSlides[i + 1];
             // console.log(nextSlide);
             nextSlide.classList.remove("features__item--hidden");
             // crumbs
             crumb.classList.remove("slider-crumbs__svg--active");
-            let nextCrumb = crumbs[i + 1];
+            let nextCrumb = featuresCrumbs[i + 1];
             nextCrumb.classList.add("slider-crumbs__svg--active");
           } else {
             return;
           }
         }
       } else {
-        let prevSlide = slides[i - 1];
+        let prevSlide = featuresCrumbs[i - 1];
         console.log(prevSlide);
 
         // crumbs
@@ -71,6 +117,89 @@ if (mediaQuery.matches) {
 
       //   }
     }
+  }
+// REASONS BLOCK
+  function switchReasonsSlides(evt) {
+    let diff = x2 - x1;
+
+    for (let m = 0; m < reasonsSlides.length; m++) {
+      let slide = reasonsSlides[m];
+      let crumb = reasonsCrumbs[m];
+      if (diff < 0) {
+        if (evt.target === slide && m < reasonsSlides.length - 1) {
+          let target = evt.target;
+          console.log(target)
+          target.classList.add("reasons-list__item--hidden");
+          if (m < reasonsSlides.length - 1) {
+            let nextSlide = reasonsSlides[m + 1];
+            // console.log(nextSlide);
+            nextSlide.classList.remove("reasons-list__item--hidden");
+            // crumbs
+            crumb.classList.remove("slider-crumbs__svg--active");
+            let nextCrumb = reasonsCrumbs[m + 1];
+            nextCrumb.classList.add("slider-crumbs__svg--active");
+          } else {
+            return;
+          }
+        }
+      } else {
+        let prevSlide = reasonsSlides[m - 1];
+        console.log(prevSlide);
+
+        // crumbs
+        // let prevCrumb = crumbs[i - 1];
+        // prevCrumb.classList.add("slider-crumbs__svg--active");
+      }
+      //
+      //     let slide = slides[i];
+      //     slides[i].classList.add("features__item--hidden");
+      //     let nextSlide = slide[evt.target + 1];
+      //     console.log(nextSlide);
+      //     // nextSlide.classList.remove("features__item--hidden");
+
+      //   }
+      }
+  }
+
+  // REVIEWSLIDER
+  function switchReviewSlides(evt) {
+    let diff = x2 - x1;
+    for (let n = 0; n < reviewSlides.length; n++) {
+      let slide = reviewSlides[n];
+      let crumb = reviewCrumbs[n];
+      if (diff < 0) {
+        if (evt.target === slide && n < reviewSlides.length - n) {
+          let target = evt.target;
+          target.classList.add("review-item--hidden");
+          if (n < reviewSlides.length - 1) {
+            let nextSlide = reviewSlides[n + 1];
+            // console.log(nextSlide);
+            nextSlide.classList.remove("review-item--hidden");
+            // crumbs
+            crumb.classList.remove("slider-crumbs__svg--active");
+            let nextCrumb = reviewCrumbs[n + 1];
+            nextCrumb.classList.add("slider-crumbs__svg--active");
+          } else {
+            return;
+          }
+        }
+      } else {
+        let prevSlide = reviewSlides[n - 1];
+        console.log(prevSlide);
+
+        // crumbs
+        // let prevCrumb = crumbs[i - 1];
+        // prevCrumb.classList.add("slider-crumbs__svg--active");
+      }
+      //
+      //     let slide = slides[i];
+      //     slides[i].classList.add("features__item--hidden");
+      //     let nextSlide = slide[evt.target + 1];
+      //     console.log(nextSlide);
+      //     // nextSlide.classList.remove("features__item--hidden");
+
+      //   }
+      }
   }
 }
 

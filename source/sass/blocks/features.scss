@@ -70,12 +70,20 @@
 
 .features__item--calendar::before {
   left: 35%;
+
+  @include vp--767 {
+    left: 40%;
+  }
 }
 
 
 .features__item--calendar::after {
   background: url("../img/icon-calendar.svg") no-repeat;
   left: 22%;
+
+  @include vp--767 {
+    left: 31%;
+  }
 }
 
 .features__item--print::before {
